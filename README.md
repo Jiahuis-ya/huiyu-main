@@ -9,5 +9,9 @@ npm init vite@latest huiyu-main -- --template react-ts
 
 ### 技术栈
 - vite + react-ts
+- [vite创建项目](https://vitejs.cn/guide/#scaffolding-your-first-vite-project)
 
 
+```bash
+$ vite-plugin-environment # 透传环境变量
+```
