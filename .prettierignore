@@ -1,0 +1,10 @@
+/dist/*
+.local
+/node_modules/**
+.vscode/*
+
+package-lock.json
+package.json
+
+**/*.svg
+**/*.sh

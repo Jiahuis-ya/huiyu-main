@@ -37,6 +37,8 @@ module.exports = {
   // 参考[常见的.eslintrc.js配置及rules说明](https://zhuanlan.zhihu.com/p/374205613)
   rules: {
     // "off" -> 0 关闭规则、 "warn" -> 1 开启警告规则、 "error" -> 2 开启错误规则
-    'no-console': 'off'
+    // "prettier/prettier": "error",
+    'no-console': 'off',
+    'no-unused-vars': 1 // 不能有声明后未被使用的变量或参数
   }
 }
