@@ -15,3 +15,7 @@ npm init vite@latest huiyu-main -- --template react-ts
 ```bash
 $ vite-plugin-environment # 透传环境变量
 ```
+
+### 版本
+node 16.13.0
+npm 8.1.0
