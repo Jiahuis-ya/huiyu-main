@@ -7,15 +7,16 @@ module.exports = {
     browser: true,
     es2021: true,
     commonjs: true, // 支持commonjs规范
-		es6: true // [启用 es6功能]支持新的 ES6 全局变量或类型（比如 Set 等新类型）
+    es6: true // [启用 es6功能]支持新的 ES6 全局变量或类型（比如 Set 等新类型）
   },
   extends: [
     // 定义文件继承的子规范（按照什么样的标准去对比）
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended', // 检测ts的eslint插件
-		'prettier/@typescript-eslint', // 使得@typescript-eslint中的样式规范失效，遵循prettier中的样式规范
-    'plugin:prettier/recommended' // Make sure this is always the last element in the array.
+    // 'prettier/@typescript-eslint', // 使得@typescript-eslint中的样式规范失效，遵循prettier中的样式规范
+    // 'plugin:prettier/recommended' // Make sure this is always the last element in the array.
+    'prettier'
   ],
   // 定义Eslint的解析器
   parser: '@typescript-eslint/parser', // typescript解析器
@@ -24,7 +25,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true //启用jsx
     },
-		// 指定想要使用的ECMAScript版本
+    // 指定想要使用的ECMAScript版本
     ecmaVersion: '6', //支持 ES6 语法(这不代表支持新类型（比如 Set 等新类型），需要在env单独设置)
     sourceType: 'module'
   },
