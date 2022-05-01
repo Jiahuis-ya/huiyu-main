@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
+import eslintPlugin from 'vite-plugin-eslint'
 // import EnvironmentPlugin from 'vite-plugin-environment' // 这个还没有安装
 
 // 在这个文件的打印测试信息可以在终端显示
@@ -13,7 +14,7 @@ export default defineConfig(({ command, mode }) => {
     // 开发环境
 
     return {
-      plugins: [react()],
+      plugins: [react(), eslintPlugin()],
       server: {
         port: 4000,
         open: true
