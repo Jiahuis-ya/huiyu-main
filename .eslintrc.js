@@ -32,6 +32,7 @@ module.exports = {
   plugins: [
     // 定义eslint所依赖的插件（加载以下规则，等待被配置后使用）
     'react',
+    'react-hooks',
     '@typescript-eslint'
   ],
   // 参考[常见的.eslintrc.js配置及rules说明](https://zhuanlan.zhihu.com/p/374205613)
@@ -39,6 +40,8 @@ module.exports = {
     // "off" -> 0 关闭规则、 "warn" -> 1 开启警告规则、 "error" -> 2 开启错误规则
     // "prettier/prettier": "error",
     'no-console': 'off',
-    'no-unused-vars': 1 // 不能有声明后未被使用的变量或参数
+    'no-unused-vars': 1, // 不能有声明后未被使用的变量或参数
+    'react-hooks/rules-of-hooks': 'error', // 检查 Hook 的规则
+    'react-hooks/exhaustive-deps': 'warn' // 检查 effect 的依赖
   }
 }
