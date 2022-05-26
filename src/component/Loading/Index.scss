@@ -1,0 +1,73 @@
+.wrapp {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
+  // background-color:#d8d8d8
+}
+
+.k-ball-holder3 {
+  padding-top: calc(100vh / 2 - 50px);
+  padding-left: 45%;
+}
+.k-ball7a {
+  border: 0;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  border-radius: 50%;
+  animation: k-loadingO 2s ease infinite;
+  background: #19a68c;
+  animation-delay: -1.5s;
+}
+.k-ball7b {
+  border: 0;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  border-radius: 50%;
+  animation: k-loadingO 2s ease infinite;
+  background: #f63d3a;
+  animation-delay: -1s;
+}
+.k-ball7c {
+  border: 0;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  border-radius: 50%;
+  animation: k-loadingO 2s ease infinite;
+  background: #fda543;
+  animation-delay: -0.5s;
+}
+.k-ball7d {
+  border: 0;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  border-radius: 50%;
+  animation: k-loadingO 2s ease infinite;
+  background: #193b48;
+}
+
+@keyframes k-loadingO {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(160%);
+  }
+  50% {
+    transform: translate(160%, 160%);
+  }
+  75% {
+    transform: translate(0, 160%);
+  }
+}
