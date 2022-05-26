@@ -21,3 +21,11 @@ $ vite-plugin-environment # 透传环境变量
 
 node 16.13.0
 npm 8.1.0
+
+### 参考
+
+[模板 1](https://github.com/ychengcloud/react-vite-admin)
+[模板 2]
+
+- [GitHub 地址](https://github.com/yezihaohao/react-admin)
+- [预览地址](https://admiring-dijkstra-34cb29.netlify.com)(已增加响应式，可手机预览 😄)
