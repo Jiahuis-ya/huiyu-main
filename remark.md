@@ -23,3 +23,11 @@ resolve: {
     }
   }
 ```
+
+### .lintstagedrc.json
+
+检测代码 -> 格式化 -> 将格式化的代码文件提交暂存区`增加git add命令`
+
+```js
+"*.{js,jsx,ts,tsx}": ["prettier --write .", "eslint --fix --ext", "git add"],
+```
