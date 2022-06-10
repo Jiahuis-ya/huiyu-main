@@ -1,4 +1,8 @@
 {
-  "*.{css, scss, js, jsx, ts, tsx}": ["prettier --write .", "eslint --fix --ext", "git add"],
+  "*.{css, scss, js, jsx, ts, tsx}": [
+    "prettier --write .",
+    "eslint --fix --ext",
+    "git add"
+  ],
   "*.md": ["prettier --write", "git add"]
 }
