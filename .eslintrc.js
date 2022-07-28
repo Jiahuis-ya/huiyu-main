@@ -43,6 +43,7 @@ module.exports = {
     'no-unused-vars': 1, // 不能有声明后未被使用的变量或参数
     'react-hooks/rules-of-hooks': 'error', // 检查 Hook 的规则
     'react-hooks/exhaustive-deps': 'warn', // 检查 effect 的依赖
-    '@typescript-eslint/no-empty-interface': 'warn'
+    '@typescript-eslint/no-empty-interface': 'warn',
+    'react/jsx-key': 1
   }
 }

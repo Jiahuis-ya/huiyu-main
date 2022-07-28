@@ -1,55 +1,43 @@
-import { defineConfig, loadEnv } from 'vite'
-import react from '@vitejs/plugin-react'
-import eslintPlugin from 'vite-plugin-eslint'
-// import EnvironmentPlugin from 'vite-plugin-environment' // 这个还没有安装
-import { resolve } from 'path'
-
 // 在这个文件的打印测试信息可以在终端显示
 
+import {
+  defineConfig,
+  loadEnv,
+  ConfigEnv,
+  UserConfig
+} from 'vite'
+// import EnvironmentPlugin from 'vite-plugin-environment' // 这个还没有安装
+import { resolve } from 'path'
+import { createVitePlugins } from './config/vite/plugins/index'
+import { createViteCSS } from './config/vite/css/index'
+import { createViteBuild } from './config/vite/build/index'
+
+// https://vitejs.cn/config/#server-open
 // https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => {
-  const env = loadEnv(mode, process.cwd())
+export default defineConfig(({command, mode}: ConfigEnv): UserConfig  => {
+  const env: Record<string, string> = loadEnv(mode, process.cwd())
+  const isBuild = command === 'build'
+
   console.log('process', env)
 
-  if (command === 'serve') {
-    // 开发环境
-
-    return {
-      plugins: [react(), eslintPlugin()],
+  return {
+      base: isBuild ? env.VITE_PROD_BASE : env.VITE_DEV_BASE,
       server: {
+        host: true, // 可以使用ip访问项目
         port: 4000,
-        open: true
+        open: true,
       },
-      // 配置文件夹别名
+      // 插件设置
+      plugins: createVitePlugins(isBuild),
+      build: createViteBuild(),
+      css: createViteCSS(),
+      // 文件夹别名设置
       resolve: {
-        // alias: aliases,
         alias: {
           '@': resolve(__dirname, 'src'),
-          component: resolve(__dirname, 'src/component')
-        }
-      },
-      css: {
-        // 🔥此处添加全局scss🔥
-        preprocessorOptions: {
-          scss: {
-            additionalData: `
-              @import "./src/assets/css/reset.css";
-              @import "./src/assets/sass/mixin.scss";
-              
-            `
-          }
+          'component': resolve(__dirname, 'src/component')
         }
       }
     }
-  } else {
-    // 线上环境
 
-    return {
-      plugins: [react()],
-      server: {
-        port: 4000,
-        open: true
-      }
-    }
-  }
 })

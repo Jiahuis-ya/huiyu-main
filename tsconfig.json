@@ -15,14 +15,19 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    // baseUrl来告诉编译器到哪里去查找模块，所有非相对模块导入都会被当做相对于 baseUrl。
     "baseUrl": "./", // 解析非相对模块的基地址，默认是当前目录
+    // 非相对模块导入的路径映射配置
     "paths": {
       // 路径映射，相对于baseUr
       "@/*": ["src/*"],
       "component/*": ["src/component/*"]
     }
   },
-  "include": ["src"],
+  // "include": ["src"],
+  "include": [ "**/*.ts", "**/*.d.ts", "**/*.tsx"],
+  // "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
+  // 编译器默认排除的编译文件
   "exclude": ["node_modules"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  // "references": [{ "path": "./tsconfig.node.json" }]
 }

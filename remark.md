@@ -31,3 +31,9 @@ resolve: {
 ```js
 "*.{js,jsx,ts,tsx}": ["prettier --write .", "eslint --fix --ext", "git add"],
 ```
+
+### else
+
+> less-loader 没有安装，看文章说在 vite 中只安装 less 就可以使用了
+
+[vite 项目配置参考](https://github1s.com/tobe-fe-dalao/fast-vue3/blob/main/.husky/pre-commit)
